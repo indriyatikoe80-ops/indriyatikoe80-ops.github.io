@@ -49,7 +49,7 @@ const Navbar = () => {
               transition: 'color 0.3s ease'
             }}
           >
-            <img src="/promosi/icon.png" alt="icon" style={{ width: '24px', height: '24px' }} /> {APP_DATA.appName}
+            <img src="/promosi/icon.png" alt="icon" style={{ width: '24px', height: '24px', verticalAlign: 'middle', marginRight: '8px' }} /> {APP_DATA.appName}
           </span>
         </div>
         
