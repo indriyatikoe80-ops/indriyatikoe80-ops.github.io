@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title>Aplikasi Belajar Anak - Belajar Sambil Bermain</title>
+  <meta name="description" content="Aplikasi belajar anak interaktif untuk TK dan PAUD. Belajar huruf, angka, dan membaca dengan cara yang menyenangkan.">
+  <meta name="keywords" content="aplikasi belajar anak, game edukasi anak, belajar TK, belajar PAUD, belajar membaca">
+  <meta name="author" content="Developer">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Aplikasi Belajar Anak - Belajar Sambil Bermain">
+  <meta property="og:description" content="Aplikasi belajar anak interaktif untuk TK dan PAUD. Belajar huruf, angka, dan membaca dengan cara yang menyenangkan.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- =========================
+       1. NAVBAR
+       ========================= -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <!-- Pakai teks jika logo belum ada -->
+        <span class="nav-brand" style="font-family: 'Fredoka One', cursive; color: var(--primary-400); font-size: 1.5rem;">🌟 KidsApp</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#features">Fitur</a></li>
+        <li><a href="#screenshots">Tampilan</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+
+      <a href="#download" class="btn btn-primary" style="display: none;">📲 Download</a>
+      
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+  </nav>
+
+  <!-- =========================
+       2. HERO SECTION
+       ========================= -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1 blob-animation"></div>
+      <div class="blob blob-2 blob-animation"></div>
+      <div class="stars-container"></div>
+    </div>
+
+    <div class="container hero-content">
+      <!-- Text Area -->
+      <div class="hero-text animate-on-scroll slide-from-left">
+        <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-weight: 600; margin-bottom: 1rem; backdrop-filter: blur(5px);">
+          🌟 Aplikasi Belajar #1 untuk Anak
+        </div>
+        <h1 class="hero-title">
+          Belajar Sambil Bermain, <span class="text-gradient" style="background: linear-gradient(to right, #FFCA28, #FF7043); -webkit-background-clip: text;">Cerdas Sejak Dini!</span>
+        </h1>
+        <p class="hero-subtitle">
+          Aplikasi interaktif yang dirancang khusus untuk anak usia TK & PAUD. Dilengkapi animasi lucu dan suara yang membuat belajar jadi super seru!
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#download" class="btn btn-primary pulse-animation">
+            📲 Dapatkan Aplikasinya
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            ▶ Pelajari Fiturnya
+          </a>
+        </div>
+      </div>
+
+      <!-- Mockup Area -->
+      <div class="hero-image animate-on-scroll slide-from-right">
+        <div class="phone-mockup float-animation">
+          <!-- Placeholder Mockup -->
+          <div style="width: 280px; height: 560px; background: #fff; border-radius: 40px; border: 12px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; width: 50%; height: 25px; background: #333; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;"></div>
+            <div style="text-align: center; color: #ccc;">
+              <p>📱</p>
+              <p style="font-size: 0.8rem;">(Screenshot Aplikasi Di Sini)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       3. TEMPAT SECTION LAINNYA
+       ========================= -->
+  <!-- Stats, Features, Learning, Screenshots, How to Use, Testimonials, FAQ -->
+  
+  <section id="features" style="background: var(--bg-secondary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Kenapa Pilih Aplikasi Kami?</h2>
+        <p class="section-subtitle">Dirancang khusus untuk mendukung tumbuh kembang dan daya tangkap si kecil.</p>
+      </div>
+      <!-- Nanti akan diisi card grid sesuai design system -->
+      <div style="text-align: center; color: var(--text-secondary);" class="animate-on-scroll delay-200">
+        <i>[Area Grid Fitur - Sedang dalam pengembangan]</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       3. STATS SECTION
+       ========================= -->
+  <section id="stats" style="background: var(--bg-primary); padding: 60px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--primary-400); font-family: var(--font-heading);">1000+</div>
+          <div style="color: var(--text-secondary); font-size: 0.9rem;">Download</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-100">
+          <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--secondary-400); font-family: var(--font-heading);">4.8</div>
+          <div style="color: var(--text-secondary); font-size: 0.9rem;">Rating</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-200">
+          <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-blue); font-family: var(--font-heading);">50+</div>
+          <div style="color: var(--text-secondary); font-size: 0.9rem;">Materi</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-300">
+          <div class="stat-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-pink); font-family: var(--font-heading);">10+</div>
+          <div style="color: var(--text-secondary); font-size: 0.9rem;">Mini Game</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       4. FEATURES SECTION
+       ========================= -->
+  <section id="features" style="background: var(--bg-secondary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Kenapa Pilih KidsApp?</h2>
+        <p class="section-subtitle">Dirancang dengan cinta untuk mendukung tumbuh kembang si kecil.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <!-- Card 1 -->
+        <div class="feature-card animate-on-scroll" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">🎮</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Belajar Interaktif</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Materi disajikan dalam format permainan yang seru, membuat anak semangat belajar setiap hari.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="feature-card animate-on-scroll delay-100" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #FFCA28 0%, #FF7043 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">🔊</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Suara & Animasi</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Dilengkapi efek suara, musik, dan animasi lucu yang membuat pengalaman belajar lebih hidup.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="feature-card animate-on-scroll delay-200" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #42A5F5 0%, #26C6DA 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">📝</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Mengenal Huruf & Angka</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Belajar mengenal huruf alfabet dan angka dengan cara yang menyenangkan dan mudah dipahami.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="feature-card animate-on-scroll delay-300" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #66BB6A 0%, #42A5F5 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">📖</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Belajar Membaca</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Latihan mengeja kata-kata sederhana dengan bantuan suara yang jelas dan mudah ditiru.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="feature-card animate-on-scroll delay-400" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #EC407A 0%, #AB47BC 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">📶</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Bisa Offline</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Tidak perlu koneksi internet. Anak bisa belajar kapan saja dan di mana saja tanpa khawatir boros data.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="feature-card animate-on-scroll delay-500" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md); transition: all 0.3s ease;">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #AB47BC 0%, #EC407A 100%); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">🛡️</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Konten Aman</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Semua konten dirancang khusus untuk anak-anak, bebas dari konten dewasa dan iklan tidak pantas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       5. LEARNING MODULES SECTION
+       ========================= -->
+  <section id="learning" style="background: var(--bg-primary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Apa yang Akan Dipelajari?</h2>
+        <p class="section-subtitle">50+ materi lengkap yang mencakup semua aspek tumbuh kembang anak</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start;">
+        <div class="learning-list animate-on-scroll">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <span style="font-size: 1.5rem;">📖</span>
+            <div><h4 style="margin: 0; font-size: 1rem;">Mengenal Huruf A-Z</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">Belajar mengenal huruf alfabet</p></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <span style="font-size: 1.5rem;">🔢</span>
+            <div><h4 style="margin: 0; font-size: 1rem;">Mengenal Angka 1-20</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">Belajar menghitung dengan fun</p></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <span style="font-size: 1.5rem;">✏️</span>
+            <div><h4 style="margin: 0; font-size: 1rem;">Belajar Menulis</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">Latihan menulis dengan panduan</p></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <span style="font-size: 1.5rem;">🗣️</span>
+            <div><h4 style="margin: 0; font-size: 1rem;">Mengeja Kata</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">Latihan mengeja kata sederhana</p></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <span style="font-size: 1.5rem;">🎮</span>
+            <div><h4 style="margin: 0; font-size: 1rem;">Mini Game</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">Permainan edukatif seru</p></div>
+          </div>
+        </div>
+        <div class="learning-image animate-on-scroll delay-200" style="display: flex; justify-content: center;">
+          <div style="width: 280px; height: 350px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg);">
+            <span style="font-size: 5rem;">📚</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       6. SCREENSHOTS SECTION
+       ========================= -->
+  <section id="screenshots" style="background: var(--bg-secondary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Tampilan Aplikasi</h2>
+        <p class="section-subtitle">Cantik, berwarna, dan mudah digunakan oleh si kecil</p>
+      </div>
+
+      <div class="screenshot-carousel animate-on-scroll" style="position: relative; overflow: hidden;">
+        <div class="screenshot-track" style="display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0;">
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">📱</span></div>
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">🎮</span></div>
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">📖</span></div>
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">🔢</span></div>
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">✏️</span></div>
+          <div style="min-width: 200px; height: 356px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); scroll-snap-align: center;"><span style="font-size: 3rem;">🏆</span></div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 12px; margin-top: 16px;">
+          <button class="screenshot-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary-300); border: none; cursor: pointer;"></button>
+          <button class="screenshot-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary-100); border: none; cursor: pointer;"></button>
+          <button class="screenshot-dot" style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary-100); border: none; cursor: pointer;"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       7. HOW TO USE SECTION
+       ========================= -->
+  <section id="how-to-use" style="background: var(--bg-primary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Mulai Belajar dalam 3 Langkah</h2>
+        <p class="section-subtitle">Gampang! Dalam hitungan menit si kecil sudah bisa mulai belajar</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; position: relative;" class="animate-on-scroll">
+        <!-- Connector Line (desktop only) -->
+        <div style="position: absolute; top: 60px; left: 25%; width: 50%; height: 3px; background: var(--primary-200); z-index: 0; display: none;" class="connector-line"></div>
+
+        <!-- Step 1 -->
+        <div style="text-align: center; position: relative; z-index: 1;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-400); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px auto; box-shadow: var(--shadow-yellow);">📲</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Step 1: Download</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Download KidsApp gratis melalui link yang tersedia di bawah ini.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="text-align: center; position: relative; z-index: 1;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--secondary-400); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px auto; box-shadow: 0 8px 30px rgba(102, 187, 106, 0.35);">⚙️</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Step 2: Install</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Pasang aplikasi di HP Android Anda, lalu buka dan pilih nama anak.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="text-align: center; position: relative; z-index: 1;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px auto; box-shadow: 0 8px 30px rgba(66, 165, 245, 0.35);">🌟</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Step 3: Belajar</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Pilih materi dan biarkan si kecil menjelajahi dunia belajar!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       8. TESTIMONIALS SECTION
+       ========================= -->
+  <section id="testimonials" style="background: var(--bg-secondary); padding: 100px 0;">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Kata Mereka yang Sudah Mencoba</h2>
+        <p class="section-subtitle">Lebih dari 1000+ orang tua sudah merasakan manfaat KidsApp</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <!-- Testimoni 1 -->
+        <div class="testimonial-card animate-on-scroll" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-sm);">
+          <div style="color: var(--primary-400); font-size: 2rem; margin-bottom: 12px;">"</div>
+          <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">Anakku jadi semangat belajar huruf sejak pakai aplikasi ini. Tampilannya lucu banget dan gampang dipakai sendiri. Recommended banget!</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--primary-200); display: flex; align-items: center; justify-content: center; font-weight: bold;">S</div>
+            <div><h4 style="margin: 0; font-size: 0.95rem;">Sarah Ibu Amanda</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.8rem;">⭐⭐⭐⭐⭐</p></div>
+          </div>
+        </div>
+
+        <!-- Testimoni 2 -->
+        <div class="testimonial-card animate-on-scroll delay-100" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-sm);">
+          <div style="color: var(--primary-400); font-size: 2rem; margin-bottom: 12px;">"</div>
+          <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">Aplikasi ini sangat membantu untuk persiapan sekolah. Anak saya sekarang sudah bisa membaca suku kata sederhana.</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--secondary-200); display: flex; align-items: center; justify-content: center; font-weight: bold;">B</div>
+            <div><h4 style="margin: 0; font-size: 0.95rem;">Budi - Guru TK</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.8rem;">⭐⭐⭐⭐⭐</p></div>
+          </div>
+        </div>
+
+        <!-- Testimoni 3 -->
+        <div class="testimonial-card animate-on-scroll delay-200" style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-sm);">
+          <div style="color: var(--primary-400); font-size: 2rem; margin-bottom: 12px;">"</div>
+          <p style="font-size: 0.95rem; margin-bottom: 16px; font-style: italic;">Bagus sekali! Tidak perlu koneksi internet juga bisa used. Sudah saya rekomendasikan ke teman-teman di gruppo.</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-weight: bold;">W</div>
+            <div><h4 style="margin: 0; font-size: 0.95rem;">wati - Ibu dua anak</h4><p style="margin: 0; color: var(--text-secondary); font-size: 0.8rem;">⭐⭐⭐⭐⭐</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       9. FAQ SECTION
+       ========================= -->
+  <section id="faq" style="background: var(--bg-primary); padding: 100px 0;">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header animate-on-scroll">
+        <h2>Pertanyaan yang Sering Ditanyakan</h2>
+        <p class="section-subtitle">Ada pertanyaan lain? Hubungi kami melalui WhatsApp!</p>
+      </div>
+
+      <div class="faq-list">
+        <!-- FAQ 1 -->
+        <div class="faq-item animate-on-scroll" style="background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden;">
+          <button class="faq-question" style="width: 100%; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left; font-size: 1rem; font-weight: 600;">
+            <span>Apakah aplikasi ini gratis?</span><span style="font-size: 1.5rem;">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 20px 20px 20px; color: var(--text-secondary); display: none;">Ya, KidsApp sepenuhnya gratis untuk didownload dan digunakan. Tidak ada biaya tersembunyi!</div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item animate-on-scroll delay-100" style="background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden;">
+          <button class="faq-question" style="width: 100%; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left; font-size: 1rem; font-weight: 600;">
+            <span>Berapa usia yang sesuai?</span><span style="font-size: 1.5rem;">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 20px 20px 20px; color: var(--text-secondary); display: none;">KidsApp dirancang untuk anak usia 3-7 tahun, khususnya TK A, TK B, dan PAUD.</div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item animate-on-scroll delay-200" style="background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden;">
+          <button class="faq-question" style="width: 100%; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left; font-size: 1rem; font-weight: 600;">
+            <span>Bisa offline?</span><span style="font-size: 1.5rem;">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 20px 20px 20px; color: var(--text-secondary); display: none;">Ya! Semua materi dan permainan bisa diakses offline setelah aplikasi diinstall.</div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item animate-on-scroll delay-300" style="background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden;">
+          <button class="faq-question" style="width: 100%; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer; text-align: left; font-size: 1rem; font-weight: 600;">
+            <span>Aman untuk anak?</span><span style="font-size: 1.5rem;">+</span>
+          </button>
+          <div class="faq-answer" style="padding: 0 20px 20px 20px; color: var(--text-secondary); display: none;">Ya! Tidak ada iklan pihak ketiga, tidak ada akses internet tidak perlu, dan semua konten dirancang khusus untuk anak-anak.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       X. DOWNLOAD SECTION
+       ========================= -->
+  <section id="download" style="background: var(--bg-dark); color: white; text-align: center; padding: 100px 0;">
+    <div class="container animate-on-scroll">
+      <h2 style="color: white; font-size: 2.5rem;">Mulai Petualangan Belajar Sekarang!</h2>
+      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 2rem auto;">
+        Download KidsApp gratis sekarang dan berikan pengalaman belajar terbaik untuk si kecil!
+      </p>
+      
+      <a href="assets/downloads/app.apk" download class="btn btn-primary" style="font-size: 1.25rem; padding: 16px 40px;">
+        📲 Download APK
+      </a>
+      
+      <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 20px; color: var(--text-light); font-size: 0.9rem; flex-wrap: wrap;">
+        <span>✅ 100% Gratis</span>
+        <span>✅ Tanpa Iklan</span>
+        <span>✅ Bisa Offline</span>
+        <span>✅ Aman untuk Anak</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       10. FOOTER
+       ========================= -->
+  <footer style="background: #0f0f1a; color: var(--text-light); padding: 60px 0 20px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+        <!-- Brand -->
+        <div>
+          <h3 style="font-family: 'Fredoka One', cursive; color: var(--primary-400); font-size: 1.5rem; margin-bottom: 16px;">🌟 KidsApp</h3>
+          <p style="font-size: 0.9rem;">Aplikasi belajar interaktif untuk anak usia dini yang membuat belajar jadi menyenangkan.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 style="color: white; margin-bottom: 16px;">Menu</h4>
+          <ul style="font-size: 0.9rem;">
+            <li style="margin-bottom: 8px;"><a href="#hero" style="color: var(--text-light);">Beranda</a></li>
+            <li style="margin-bottom: 8px;"><a href="#features" style="color: var(--text-light);">Fitur</a></li>
+            <li style="margin-bottom: 8px;"><a href="#screenshots" style="color: var(--text-light);">Tampilan</a></li>
+            <li style="margin-bottom: 8px;"><a href="#download" style="color: var(--text-light);">Download</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4 style="color: white; margin-bottom: 16px;">Hubungi Kami</h4>
+          <ul style="font-size: 0.9rem;">
+            <li style="margin-bottom: 8px;">📧 Email: hello@kidsapp.id</li>
+            <li style="margin-bottom: 8px;">📱 WhatsApp: +62 812 3456 7890</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem;">
+        <p>© 2025 KidsApp. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA Button -->
+  <a href="#download" class="floating-cta" style="position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; border-radius: 50%; background: var(--primary-400); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: var(--shadow-lg); z-index: 999; animation: pulse 2s infinite;">📲</a>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
