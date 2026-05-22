@@ -46,10 +46,12 @@ const Navbar = () => {
               fontFamily: "'Fredoka One', cursive", 
               color: isScrolled ? 'var(--primary-400)' : 'var(--text-white)', 
               fontSize: '1.5rem',
-              transition: 'color 0.3s ease'
+              transition: 'color 0.3s ease',
+              display: 'flex',
+              alignItems: 'center'
             }}
           >
-            <img src="/promosi/icon.png" alt="icon" style={{ width: '24px', height: '24px', verticalAlign: 'middle', marginRight: '8px' }} /> {APP_DATA.appName}
+            <img src="/promosi/icon.png" alt="icon" style={{ width: '28px', height: '28px', marginRight: '8px' }} /> {APP_DATA.appName}
           </span>
         </div>
         
