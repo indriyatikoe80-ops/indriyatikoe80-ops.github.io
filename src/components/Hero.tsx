@@ -1,5 +1,20 @@
 import { motion } from 'framer-motion';
 import APP_DATA from '../data/content';
+import Star from './decorations/Star';
+
+type StarInfo = {
+  variant: 'small' | 'medium' | 'large';
+  delay: string;
+  left: string;
+  top: string;
+};
+
+const STAR_VARIANTS: StarInfo[] = Array.from({ length: 15 }, () => ({
+  variant: ['small', 'medium', 'large'][Math.floor(Math.random() * 3)] as StarInfo['variant'],
+  delay: `${Math.random() * 2}s`,
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
 
 const Hero = () => {
   return (
@@ -9,7 +24,7 @@ const Hero = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: 'var(--gradient-hero)',
+        background: 'linear-gradient(rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 100%), var(--gradient-hero)',
         color: 'var(--text-white)',
         paddingTop: '100px',
         overflow: 'hidden',
@@ -21,18 +36,21 @@ const Hero = () => {
         <div className="blob blob-1 blob-animation" style={{ position: 'absolute', top: '-10%', left: '-10%', width: '500px', height: '500px', background: 'rgba(66, 165, 245, 0.3)', filter: 'blur(40px)' }}></div>
         <div className="blob blob-2 blob-animation" style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '400px', height: '400px', background: 'rgba(236, 64, 122, 0.3)', filter: 'blur(40px)' }}></div>
         <div className="stars-container">
-          {[...Array(15)].map((_, i) => (
-            <div 
-              key={i} 
-              className="sparkle-effect" 
-              style={{ 
-                left: `${Math.random() * 100}%`, 
-                top: `${Math.random() * 100}%`, 
-                fontSize: `${Math.random() * 15 + 10}px`, 
-                animationDelay: `${Math.random() * 2}s` 
+          {STAR_VARIANTS.map((star, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                left: star.left,
+                top: star.top,
+                width: star.variant === 'small' ? '12px' : star.variant === 'medium' ? '20px' : '28px',
+                height: star.variant === 'small' ? '12px' : star.variant === 'medium' ? '20px' : '28px',
+                animationDelay: star.delay,
+                color: 'rgba(255, 255, 255, 0.9)',
+                pointerEvents: 'none',
               }}
             >
-              ✨
+              <Star variant={star.variant} color="currentColor" animationDelay="0s" />
             </div>
           ))}
         </div>

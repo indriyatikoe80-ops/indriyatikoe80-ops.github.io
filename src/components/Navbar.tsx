@@ -40,17 +40,17 @@ const Navbar = () => {
     >
       <div className="container nav-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span 
-            className="nav-brand" 
-            style={{ 
-              fontFamily: "'Fredoka One', cursive", 
-              color: isScrolled ? 'var(--primary-400)' : 'var(--text-white)', 
-              fontSize: '1.5rem',
-              transition: 'color 0.3s ease',
-              display: 'flex',
-              alignItems: 'center'
-            }}
-          >
+            <span 
+              className="nav-brand" 
+              style={{ 
+                fontFamily: "'Fredoka One', cursive", 
+                color: isScrolled ? 'var(--primary-400)' : 'var(--text-primary)', 
+                fontSize: '1.5rem',
+                transition: 'color 0.3s ease',
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
             <img src="/promosi/icon.png" alt="icon" style={{ width: '28px', height: '28px', marginRight: '8px' }} /> {APP_DATA.appName}
           </span>
         </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
                 style={{ 
                   fontWeight: 600, 
                   transition: 'color 0.3s ease',
-                  color: isScrolled || isMobileMenuOpen ? 'var(--text-primary)' : 'var(--text-white)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 {link.name}
@@ -100,8 +100,8 @@ const Navbar = () => {
             border: 'none',
             fontSize: '1.5rem',
             cursor: 'pointer',
-            color: isScrolled || isMobileMenuOpen ? 'var(--text-primary)' : 'var(--text-white)'
-          }}
+            color: 'var(--text-primary)'
+            }}
         >
           {isMobileMenuOpen ? '✕' : '☰'}
         </button>
