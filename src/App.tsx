@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import PromoVideo from './components/PromoVideo';
 import Stats from './components/Stats';
 import Features from './components/Features';
+import Modules from './components/Modules';
 import Screenshots from './components/Screenshots';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
@@ -20,6 +21,7 @@ function App() {
         <PromoVideo />
         <Stats />
         <Features />
+        <Modules />
         <Screenshots />
         <Testimonials />
         <Pricing />

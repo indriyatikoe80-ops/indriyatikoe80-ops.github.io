@@ -54,6 +54,7 @@ export interface PricingTier {
   price: string;
   originalPrice: string;
   duration: string;
+  discount: string;
   isPopular?: boolean;
   features: string[];
 }
@@ -66,7 +67,8 @@ export interface AppData {
   hero: HeroData;
   stats: Stat[];
   features: Feature[];
-  learningModules: { icon: string; title: string; desc: string }[];
+  learningModules: { icon: string; title: string; desc: string; color: string; isFree: boolean }[];
+  screenshots: { src: string; label: string }[];
   testimonials: Testimonial[];
   faqs: FAQItem[];
   pricing: PricingTier[];
@@ -78,116 +80,166 @@ export const APP_DATA: AppData = {
   appName: 'Aplikasi Belajar Anak',
   tagline: 'Belajar Sambil Bermain',
   email: 'candra.buwana80@gmail.com',
-  description: 'Aplikasi Belajar yang dirancang khusus untuk anak - anak berkebutuhan khusus',
-  
+  description:
+    'Aplikasi belajar interaktif yang dirancang khusus untuk anak-anak berkebutuhan khusus dengan 24 modul edukatif yang menyenangkan.',
+
   hero: {
-    badge: 'Aplikasi Belajar #1 untuk Anak',
-    title: 'Belajar Sambil Bermain, Cerdas Sejak Dini!',
-    subtitle: 'Aplikasi belajar interaktif yang dirancang khusus untuk anak - anak berkebutuhan khusus. Dilengkapi animasi lucu dan suara yang membuat belajar jadi super seru!',
+    badge: 'Aplikasi Belajar Terlengkap untuk Anak ABK',
+    title: 'Belajar Sambil Bermain, Tumbuh Bersama!',
+    subtitle:
+      'Aplikasi belajar interaktif dengan 24 modul edukatif, dirancang khusus untuk anak-anak berkebutuhan khusus. Dilengkapi musik latar, animasi ceria, dan laporan perkembangan anak.',
     ctaPrimary: 'Hubungi via Email',
-    ctaSecondary: 'Pelajari Fiturnya',
+    ctaSecondary: 'Lihat Modul Belajar',
   },
-  
+
   stats: [
     { value: 1000, label: 'Download', suffix: '+', isDecimal: false },
     { value: 4.8, label: 'Rating', suffix: '', isDecimal: true },
-    { value: 50, label: 'Materi', suffix: '+', isDecimal: false },
-    { value: 10, label: 'Mini Game', suffix: '+', isDecimal: false },
+    { value: 24, label: 'Modul Belajar', suffix: '', isDecimal: false },
+    { value: 8, label: 'Jenis Game', suffix: '+', isDecimal: false },
   ],
-  
+
   features: [
     {
-      icon: '🎮',
-      title: 'Belajar Interaktif',
-      desc: 'Materi disajikan dalam format permainan yang seru, membuat anak semangat belajar setiap hari.',
-      color: 'var(--primary-400)'
+      icon: 'gamepad',
+      title: '24 Modul Interaktif',
+      desc: 'Dari membaca suku kata, menyusun kalimat, puzzle gambar, hingga terapi snoezelen — semua tersedia.',
+      color: '#FFB300',
     },
     {
-      icon: '🔊',
-      title: 'Suara & Animasi',
-      desc: 'Dilengkapi efek suara, musik, dan animasi lucu yang membuat pengalaman belajar lebih hidup.',
-      color: 'var(--secondary-400)'
+      icon: 'sound',
+      title: 'Musik & Suara Ceria',
+      desc: 'Dilengkapi background music, efek suara, dan text-to-speech untuk pengalaman belajar yang hidup.',
+      color: '#43A047',
     },
     {
-      icon: '🔡',
-      title: 'Mengenal Huruf',
-      desc: 'Latihan mengenal huruf alfabet dengan cara yang menyenangkan dan mudah dipahami.',
-      color: 'var(--accent-blue)'
+      icon: 'report',
+      title: 'Laporan Perkembangan',
+      desc: 'Pantau kemajuan anak secara detail — skor, sesi belajar, grafik perkembangan tiap modul.',
+      color: '#42A5F5',
     },
     {
-      icon: '🔢',
-      title: 'Mengenal Angka',
-      desc: 'Belajar menghitung dengan benda-benda lucu dan kuis yang menantang.',
-      color: 'var(--accent-pink)'
+      icon: 'offline',
+      title: 'Bisa Offline (Premium)',
+      desc: 'Pengguna Premium dapat mengakses semua modul tanpa koneksi internet, kapan saja & di mana saja.',
+      color: '#AB47BC',
     },
     {
-      icon: '📶',
-      title: 'Bisa Offline',
-      desc: 'Tidak perlu koneksi internet. Anak bisa belajar kapan saja dan di mana saja.',
-      color: 'var(--accent-purple)'
+      icon: 'shield',
+      title: 'Konten Aman ABK',
+      desc: 'Dirancang khusus untuk anak berkebutuhan khusus — antarmuka sederhana, visual jelas, respons suara.',
+      color: '#26C6DA',
     },
     {
-      icon: '🛡️',
-      title: 'Konten Edukasi Aman',
-      desc: 'Semua materi dirancang khusus untuk anak-anak, aman dan menstimulasi perkembangan kognitif mereka.',
-      color: 'var(--accent-teal)'
+      icon: 'premium',
+      title: 'Bebas Iklan (Premium)',
+      desc: 'Nikmati belajar tanpa gangguan iklan dengan Lisensi Premium. Bayar sekali, akses selamanya.',
+      color: '#FF7043',
     },
     {
-      icon: '💎',
-      title: 'Opsi Bebas Iklan',
-      desc: 'Tersedia pilihan Lisensi Premium dengan harga terjangkau untuk pengalaman belajar 100% bebas gangguan iklan.',
-      color: 'var(--primary-500)'
-    }
+      icon: 'therapy',
+      title: 'Terapi Snoezelen',
+      desc: 'Modul unik terapi snoezelen multisensori untuk stimulasi sensorik anak berkebutuhan khusus.',
+      color: '#EC407A',
+    },
   ],
-  
+
+  // Data modul diambil langsung dari public/data/modules.json di aplikasi asli
   learningModules: [
-    { icon: '📖', title: 'Mengenal Huruf A-Z', desc: 'Belajar mengenal huruf alfabet' },
-    { icon: '🔢', title: 'Mengenal Angka 1-20', desc: 'Belajar menghitung dengan fun' },
-    { icon: '✏️', title: 'Belajar Menulis', desc: 'Latihan menulis dengan panduan' },
-    { icon: '🗣️', title: 'Mengeja Kata', desc: 'Latihan mengeja kata sederhana' },
-    { icon: '🎮', title: 'Mini Game', desc: 'Permainan edukatif seru' },
+    { icon: 'abc', title: 'Huruf Besar & Kecil', desc: 'Belajar mengenal dan membedakan huruf besar dan kecil', color: '#FFB300', isFree: true },
+    { icon: 'book', title: 'Membaca Suku Kata', desc: 'Latihan membaca suku kata dengan panduan suara interaktif', color: '#42A5F5', isFree: false },
+    { icon: 'write', title: 'Menulis Kata', desc: 'Latihan menulis kata dengan panduan titik-titik interaktif', color: '#26C6DA', isFree: false },
+    { icon: 'write', title: 'Menulis Kalimat', desc: 'Latihan menulis kalimat pendek dengan panduan yang jelas', color: '#5C6BC0', isFree: false },
+    { icon: 'sentence', title: 'Menyusun Kalimat', desc: 'Menyusun kata-kata acak menjadi kalimat yang benar', color: '#FF7043', isFree: true },
+    { icon: 'fruit', title: 'Nama Buah', desc: 'Mencocokkan gambar buah dengan namanya secara interaktif', color: '#EF5350', isFree: true },
+    { icon: 'animal', title: 'Nama Hewan', desc: 'Mencocokkan gambar hewan dengan namanya beserta suaranya', color: '#8D6E63', isFree: true },
+    { icon: 'transport', title: 'Alat Transportasi', desc: 'Mengenal berbagai alat transportasi darat, laut, dan udara', color: '#26A69A', isFree: true },
+    { icon: 'activity', title: 'Nama Aktivitas', desc: 'Mengenal berbagai aktivitas sehari-hari dengan gambar lucu', color: '#FFA726', isFree: true },
+    { icon: 'body', title: 'Anggota Tubuh', desc: 'Mengenal bagian-bagian tubuh manusia dengan cara seru', color: '#66BB6A', isFree: true },
+    { icon: 'tool', title: 'Fungsi Benda', desc: 'Mencocokkan benda dengan fungsinya dalam kehidupan sehari-hari', color: '#EC407A', isFree: true },
+    { icon: 'image', title: 'Mencocokkan Gambar', desc: 'Mencari dan mencocokkan gambar yang sama dari beberapa pilihan', color: '#AB47BC', isFree: true },
+    { icon: 'pair', title: 'Memasangkan Gambar', desc: 'Memasangkan gambar yang memiliki hubungan atau keterkaitan', color: '#42A5F5', isFree: true },
+    { icon: 'search', title: 'Mencari Gambar', desc: 'Menemukan gambar benda yang disebutkan di antara pilihan', color: '#FFB300', isFree: true },
+    { icon: 'puzzle', title: 'Puzzle Gambar', desc: 'Menyusun potongan gambar menjadi gambar yang utuh', color: '#43A047', isFree: true },
+    { icon: 'pattern', title: 'Lengkapi Pola', desc: 'Melengkapi pola gambar dan warna untuk melatih logika', color: '#FF7043', isFree: true },
+    { icon: 'group', title: 'Kelompokkan Gambar', desc: 'Mengelompokkan gambar berdasarkan kategori yang sama', color: '#26C6DA', isFree: true },
+    { icon: 'sequence', title: 'Urutan Aktivitas', desc: 'Mengurutkan gambar aktivitas sehari-hari sesuai tahapannya', color: '#5C6BC0', isFree: true },
+    { icon: 'memory', title: 'Modul Memori', desc: 'Permainan memori untuk melatih daya ingat dan konsentrasi', color: '#EF5350', isFree: true },
+    { icon: 'number', title: 'Modul Berhitung', desc: 'Belajar berhitung penjumlahan dan pengurangan dengan benda', color: '#8D6E63', isFree: true },
+    { icon: 'emotion', title: 'Mengenali Emosi', desc: 'Mengenal dan memahami ekspresi emosi untuk kecerdasan emosional', color: '#FFA726', isFree: true },
+    { icon: 'sound', title: 'Mengenali Suara', desc: 'Menebak suara hewan, benda, dan alam sekitar', color: '#66BB6A', isFree: true },
+    { icon: 'shield', title: 'Boleh / Tidak Boleh', desc: 'Belajar membedakan perilaku yang boleh dan tidak boleh dilakukan', color: '#EC407A', isFree: true },
+    { icon: 'therapy', title: 'Terapi Snoezelen', desc: 'Stimulasi multisensori untuk relaksasi dan terapi sensorik ABK', color: '#AB47BC', isFree: true },
   ],
-  
+
+  screenshots: [
+    { src: `${import.meta.env.BASE_URL}membaca.png`, label: 'Modul Membaca Suku Kata' },
+    { src: `${import.meta.env.BASE_URL}lengkapi-pola.png`, label: 'Modul Lengkapi Pola' },
+    { src: `${import.meta.env.BASE_URL}cari-gambar.png`, label: 'Modul Mencari Gambar' },
+    { src: `${import.meta.env.BASE_URL}menyusun-kalimat.png`, label: 'Modul Menyusun Kalimat' },
+    { src: `${import.meta.env.BASE_URL}daftar-modul.png`, label: 'Daftar 24 Modul Belajar' },
+  ],
+
   testimonials: [
     {
       name: 'Sarah',
-      role: 'Ibu dari Amanda',
-      text: 'Anakku jadi semangat belajar huruf sejak pakai aplikasi ini. Tampilannya lucu banget dan gampang dipakai sendiri. Recommended!',
-      rating: 5
+      role: 'Ibu dari Amanda (ABK)',
+      text: 'Anakku yang berkebutuhan khusus jadi lebih semangat belajar! Modulnya lengkap banget dan tampilannya sangat anak-friendly. Recommended!',
+      rating: 5,
     },
     {
       name: 'Budi',
-      role: 'Guru TK',
-      text: 'Aplikasi ini sangat membantu untuk persiapan sekolah. Anak saya sekarang sudah bisa membaca suku kata sederhana.',
-      rating: 5
+      role: 'Terapis Anak',
+      text: 'Aplikasi ini sangat membantu terapi saya. Fitur Snoezelen dan laporan perkembangan sangat berguna untuk memantau progres anak.',
+      rating: 5,
     },
     {
       name: 'Wati',
-      role: 'Ibu dua anak',
-      text: 'Bagus sekali! Tidak perlu koneksi internet juga bisa used. Sudah saya rekomendasikan ke teman-teman.',
-      rating: 5
-    }
+      role: 'Guru SLB',
+      text: 'Bagus sekali! Tidak perlu koneksi internet untuk premium. Saya gunakan di kelas setiap hari. Anak-anak suka sekali modul puzzle dan memorinya.',
+      rating: 5,
+    },
   ],
-  
+
   faqs: [
     {
       question: 'Apakah aplikasi ini gratis?',
-      answer: 'Ya, Aplikasi Belajar Anak sepenuhnya gratis untuk diunduh dan semua modul dasar dapat dimainkan secara gratis (didukung oleh iklan yang aman untuk anak).'
+      answer:
+        'Ya, aplikasi ini gratis diunduh. Hampir semua modul (22 dari 24 modul) bisa dimainkan gratis dengan iklan. Hanya modul Membaca Suku Kata dan Menulis yang memerlukan lisensi Premium.',
     },
     {
-      question: 'Berapa usia yang sesuai?',
-      answer: 'Aplikasi ini dirancang untuk anak usia 3-7 tahun, khususnya TK A, TK B, dan PAUD.'
+      question: 'Untuk siapa aplikasi ini dirancang?',
+      answer:
+        'Aplikasi ini dirancang khusus untuk anak berkebutuhan khusus (ABK), namun juga cocok untuk anak-anak usia 3-8 tahun secara umum, termasuk TK A, TK B, PAUD, dan SD kelas awal.',
     },
     {
-      question: 'Bisa offline?',
-      answer: 'Ya! Modul yang sudah dibuka dapat diakses tanpa koneksi internet (khusus versi Premium).'
+      question: 'Ada berapa modul belajar?',
+      answer:
+        'Saat ini tersedia 24 modul belajar yang mencakup: membaca, menulis, berhitung, menyusun kalimat, mencocokkan gambar, puzzle, pola, mengenal emosi, mengenal suara, terapi snoezelen, dan masih banyak lagi.',
+    },
+    {
+      question: 'Apa itu Terapi Snoezelen?',
+      answer:
+        'Terapi Snoezelen adalah pendekatan multisensori untuk relaksasi dan stimulasi sensorik yang dirancang khusus untuk anak berkebutuhan khusus. Modul ini membantu anak dalam regulasi sensorik dan ketenangan.',
+    },
+    {
+      question: 'Bagaimana fitur Laporan Perkembangan?',
+      answer:
+        'Aplikasi merekam setiap sesi belajar anak, termasuk skor, jumlah jawaban benar/salah, durasi bermain, dan grafik perkembangan per modul. Orang tua dan terapis dapat memantau kemajuan anak secara detail.',
     },
     {
       question: 'Bagaimana cara menghilangkan iklan?',
-      answer: 'Kami menyediakan Lisensi Premium di dalam aplikasi (pembelian satu kali atau berlangganan) yang akan menghapus seluruh iklan selamanya atau sesuai durasi yang dipilih.'
-    }
+      answer:
+        'Beli Lisensi Premium di dalam aplikasi. Pembayaran dilakukan via Midtrans (transfer bank, e-wallet, kartu kredit). Setelah pembayaran berhasil, kode lisensi dikirim ke email dan WhatsApp Anda.',
+    },
+    {
+      question: 'Apakah bisa digunakan offline?',
+      answer:
+        'Ya! Pengguna Premium dapat mengakses semua modul tanpa koneksi internet. Pengguna gratis memerlukan koneksi internet untuk memuat iklan.',
+    },
   ],
-  
+
+  // Harga diambil langsung dari LicenseModal.tsx -> getPriceInfo()
   pricing: [
     {
       id: '1-bulan',
@@ -195,7 +247,13 @@ export const APP_DATA: AppData = {
       price: 'Rp 15.000',
       originalPrice: 'Rp 35.000',
       duration: '/ bulan',
-      features: ['Bebas dari semua iklan', 'Akses fitur premium', 'Bisa dimainkan offline', 'Batal kapan saja']
+      discount: 'Diskon 57%',
+      features: [
+        'Bebas dari semua iklan',
+        'Akses semua 24 modul',
+        'Bisa dimainkan offline',
+        'Laporan perkembangan lengkap',
+      ],
     },
     {
       id: '6-bulan',
@@ -203,34 +261,55 @@ export const APP_DATA: AppData = {
       price: 'Rp 50.000',
       originalPrice: 'Rp 120.000',
       duration: '/ 6 bulan',
-      features: ['Bebas dari semua iklan', 'Akses fitur premium', 'Bisa dimainkan offline', 'Batal kapan saja', 'Lebih hemat!']
+      discount: 'Diskon 58%',
+      features: [
+        'Bebas dari semua iklan',
+        'Akses semua 24 modul',
+        'Bisa dimainkan offline',
+        'Laporan perkembangan lengkap',
+        'Hemat vs paket bulanan!',
+      ],
     },
     {
-      id: 'selamanya',
-      name: 'Paket Selamanya',
-      price: 'Rp 99.000',
-      originalPrice: 'Rp 250.000',
-      duration: 'Satu kali bayar',
+      id: '1-tahun',
+      name: 'Paket 1 Tahun',
+      price: 'Rp 150.000',
+      originalPrice: 'Rp 500.000',
+      duration: '/ 1 tahun',
+      discount: 'Diskon 70%',
       isPopular: true,
-      features: ['Bebas dari semua iklan selamanya', 'Akses fitur premium selamanya', 'Bisa dimainkan offline selamanya', 'Lisensi berlaku seumur hidup']
-    }
+      features: [
+        'Bebas iklan selama 1 tahun',
+        'Akses semua 24 modul',
+        'Bisa dimainkan offline',
+        'Laporan perkembangan lengkap',
+        'Nilai terbaik!',
+      ],
+    },
   ],
-  
+
   download: {
-    title: 'Mulai Petualangan Belajar Sekarang!',
-    subtitle: 'Download Aplikasi Belajar Anak gratis sekarang dan berikan pengalaman belajar terbaik untuk si kecil!',
-    buttonText: '📧 Hubungi via Email',
-    trustBadges: ['✅ Gratis Diunduh', '✅ Opsi Premium Tanpa Iklan', '✅ Bisa Offline', '✅ Aman untuk Anak'],
+    title: 'Mulai Perjalanan Belajar Si Kecil Sekarang!',
+    subtitle:
+      'Download gratis dan buka 22 modul edukatif sekarang juga. Upgrade ke Premium untuk pengalaman belajar penuh tanpa batas.',
+    buttonText: 'Hubungi via Email',
+    trustBadges: [
+      'Gratis Diunduh',
+      '22 Modul Gratis',
+      'Bisa Offline (Premium)',
+      'Khusus Anak ABK',
+    ],
   },
-  
+
   footer: {
     brand: 'Aplikasi Belajar Anak',
-    description: 'Aplikasi belajar interaktif untuk anak usia dini yang membuat belajar jadi menyenangkan.',
-    quickLinks: ['Beranda', 'Fitur', 'Tampilan', 'Download'],
+    description:
+      'Aplikasi belajar interaktif dengan 24 modul edukatif, dirancang khusus untuk anak berkebutuhan khusus (ABK).',
+    quickLinks: ['Beranda', 'Fitur', 'Modul', 'Tampilan', 'Harga'],
     contact: {
       email: 'candra.buwana80@gmail.com',
-    }
-  }
+    },
+  },
 };
 
 export default APP_DATA;

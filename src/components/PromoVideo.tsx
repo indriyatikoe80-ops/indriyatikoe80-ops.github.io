@@ -44,31 +44,15 @@ const PromoVideo = () => {
             border: '8px solid white'
           }}
         >
-          {/* PLACEHOLDER VIDEO - Ganti src dengan URL video YouTube atau source lokal */}
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', zIndex: 10, background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6))' }}>
-            <div 
-              style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                background: 'var(--primary-500)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                boxShadow: '0 0 0 10px rgba(255, 179, 0, 0.3)',
-                marginBottom: '1rem',
-                animation: 'pulse 2s infinite'
-              }}
-            >
-              <div style={{ width: 0, height: 0, borderTop: '15px solid transparent', borderBottom: '15px solid transparent', borderLeft: '25px solid white', marginLeft: '5px' }}></div>
-            </div>
-            <p style={{ fontWeight: 600, fontSize: '1.2rem' }}>Klik untuk Memutar Video</p>
-            <p style={{ fontSize: '0.9rem', opacity: 0.8, marginTop: '8px' }}>(Area Placeholder Video Promosi)</p>
-          </div>
-          
-          {/* Background image mockup for video cover */}
-          <div style={{ position: 'absolute', inset: 0, opacity: 0.5, background: 'url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop") center/cover' }}></div>
+          {/* Video Player */}
+          <video 
+            controls 
+            poster={`${import.meta.env.BASE_URL}lengkapi-pola.png`} // Menggunakan salah satu screenshot sebagai poster
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '12px' }}
+          >
+            <source src={`${import.meta.env.BASE_URL}promo-video.mp4`} type="video/mp4" />
+            Browser Anda tidak mendukung pemutaran video.
+          </video>
         </motion.div>
       </div>
     </section>

@@ -108,13 +108,27 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           style={{ flex: 1, display: 'flex', justifyContent: 'center', position: 'relative' }}
         >
-          <div className="phone-mockup float-animation" style={{ maxWidth: '300px', position: 'relative', zIndex: 2 }}>
-            <div style={{ width: '280px', height: '560px', background: '#fff', borderRadius: '40px', border: '12px solid #333', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, width: '50%', height: '25px', background: '#333', borderBottomLeftRadius: '15px', borderBottomRightRadius: '15px' }}></div>
-              <div style={{ textAlign: 'center', color: '#ccc' }}>
-                <p style={{ fontSize: '2rem' }}>📱</p>
-                <p style={{ fontSize: '0.8rem' }}>(Screenshot Aplikasi)</p>
-              </div>
+          <div className="tablet-mockup float-animation" style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{ 
+              width: 'min(90vw, 600px)', 
+              background: '#000', 
+              borderRadius: '24px', 
+              border: '12px solid #222', 
+              boxShadow: '0 25px 50px rgba(0,0,0,0.4)', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              position: 'relative', 
+              overflow: 'hidden' 
+            }}>
+              {/* Tablet Camera Hole */}
+              <div style={{ position: 'absolute', left: '-8px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', background: '#111', borderRadius: '50%', zIndex: 5 }}></div>
+              
+              <img 
+                src={APP_DATA.screenshots[4]?.src || `${import.meta.env.BASE_URL}daftar-modul.png`} 
+                alt="Tampilan Aplikasi Belajar" 
+                style={{ width: '100%', height: 'auto', display: 'block' }} 
+              />
             </div>
           </div>
         </motion.div>

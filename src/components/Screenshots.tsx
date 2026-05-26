@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import APP_DATA from '../data/content';
 
 const Screenshots = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -38,30 +39,32 @@ const Screenshots = () => {
             dragConstraints={{ right: 0, left: -width }}
             style={{ 
               display: 'flex', 
-              gap: '20px',
-              width: 'max-content'
+              gap: '24px',
+              width: 'max-content',
+              padding: '10px 0'
             }}
           >
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {APP_DATA.screenshots.map((shot, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: -5 }}
                 style={{
-                  minWidth: '260px',
-                  height: '460px',
-                  background: 'rgba(255,255,255,0.1)',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(255,255,255,0.2)',
+                  minWidth: '100vw',
+                  maxWidth: '100vw',
+                  background: 'rgba(255,255,255,0.05)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  pointerEvents: 'none' /* Prevents child from interfering with drag */
+                  pointerEvents: 'none',
+                  overflow: 'hidden',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+                  padding: '20px',
+                  boxSizing: 'border-box'
                 }}
               >
-                <div style={{ textAlign: 'center', opacity: 0.5 }}>
-                  <p style={{ fontSize: '3rem' }}>📱</p>
-                  <p>Screenshot {i}</p>
-                </div>
+                <img src={shot.src} alt={shot.label} style={{ maxWidth: '100%', maxHeight: '500px', display: 'block', objectFit: 'contain' }} />
               </motion.div>
             ))}
           </motion.div>
