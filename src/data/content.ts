@@ -296,7 +296,7 @@ export const APP_DATA: AppData = {
       'Download gratis dan buka 22 modul edukatif sekarang juga. Upgrade ke Premium untuk pengalaman belajar penuh tanpa batas.',
     buttonText: 'Download APK Sekarang',
     emailButtonText: 'Hubungi via Email',
-    apkUrl: 'https://github.com/indriyatikoe80-ops/indriyatikoe80-ops.github.io/releases/download/v1.0.0/app-release.apk',
+    apkUrl: 'https://github.com/indriyatikoe80-ops/indriyatikoe80-ops.github.io/releases/download/v1.0.2/app-release.apk',
     trustBadges: [
       'Gratis Diunduh',
       '22 Modul Gratis',
